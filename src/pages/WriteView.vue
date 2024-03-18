@@ -42,7 +42,7 @@ const save = () => {
 
 #toolbar {
   position: fixed;
-  bottom: 0;
+  bottom: 1vh;
   left: 0;
   border: none;
   display: flex;
