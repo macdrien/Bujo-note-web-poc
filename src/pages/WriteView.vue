@@ -41,7 +41,7 @@ const save = () => {
 }
 
 #toolbar {
-  position: fixed;
+  position: absolute;
   bottom: 1vh;
   left: 0;
   border: none;
