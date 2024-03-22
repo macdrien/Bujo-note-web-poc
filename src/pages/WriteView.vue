@@ -6,7 +6,6 @@ const quill: Ref<Quill> = ref();
 
 const onReady = (editor: Quill) => {
   editor.focus();
-  console.log(editor);
   quill.value = editor;
 }
 
@@ -81,19 +80,5 @@ const save = () => {
 
 :deep(.ql-clipboard) {
   display: none;
-}
-
-:deep(ul[data-checked=true] li),
-:deep(ul[data-checked=false] li) {
-  list-style: none;
-}
-
-:deep(ul[data-checked=true] li:before) {
-  content: '\2610';
-  margin-right: 5px;
-}
-:deep(ul[data-checked=false] li:before) {
-  content: '\2611';
-  margin-right: 5px;
 }
 </style>
