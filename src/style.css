@@ -4,10 +4,10 @@
   font-family: Roboto, sans-serif;
   font-weight: 400;
 
-  --primary: #0D47A1;
-  --secondary: #BBDEFB;
-  --background: #E3F2FD;
-  --text: #263238;
+  --primary: #304FFE;
+  --secondary: #FFCE30;
+  --background: #FFFFFF;
+  --text: #212121;
 }
 
 * {
