@@ -22,9 +22,9 @@ const save = () => {
       <button class="ql-header" :value="1">T</button>
       <button class="ql-bold">B</button>
       <button class="ql-italic">I</button>
-      <button class="ql-list" value="bullet">.</button>
+      <button class="ql-list" value="bullet">•</button>
       <button class="ql-list" value="ordered">1</button>
-      <button class="ql-list" value="check">O</button>
+      <button class="ql-list" value="check">✓</button>
       <button class="save" @click="save">Save</button>
     </div>
   </div>
