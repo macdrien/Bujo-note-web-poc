@@ -32,11 +32,12 @@ const save = () => {
 
 <style scoped>
 .write {
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw - 2px);
+  height: calc(100vh - 2px);
+  padding: 1px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 #toolbar {
@@ -70,15 +71,22 @@ const save = () => {
 
 :deep(.ql-container) {
   box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 :deep(.ql-editor) {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   text-align: left;
 }
 
 :deep(.ql-clipboard) {
   display: none;
+}
+
+:deep(.ql-container:focus-visible),
+:deep(.ql-container :focus-visible) {
+  outline: none;
 }
 </style>
