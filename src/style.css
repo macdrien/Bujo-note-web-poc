@@ -58,3 +58,7 @@ h1 {
   margin: 0;
   text-align: center;
 }
+
+.ql-container h1 {
+  font-size: 2em;
+}
