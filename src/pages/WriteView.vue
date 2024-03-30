@@ -2,7 +2,7 @@
 import { type Ref, ref } from 'vue';
 import { type Quill, type Delta, QuillEditor } from '@vueup/vue-quill';
 
-const note: Ref<Delta> = ref();
+const note: Ref<Delta | undefined> = ref();
 const quill: Ref<Quill> = ref();
 
 const onReady = (editor: Quill) => {
