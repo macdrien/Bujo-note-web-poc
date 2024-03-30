@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { type Ref, ref } from 'vue';
-import { type Quill, QuillEditor } from '@vueup/vue-quill';
+import { type Quill, type Delta, QuillEditor } from '@vueup/vue-quill';
 
+const note: Ref<Delta> = ref();
 const quill: Ref<Quill> = ref();
 
 const onReady = (editor: Quill) => {
@@ -10,13 +11,14 @@ const onReady = (editor: Quill) => {
 }
 
 const editorSave = () => {
-  console.log(JSON.stringify(quill.value.getContents().ops));
+  // Not yet implemented
+  console.log('Save not yet implemented');
 }
 </script>
 
 <template>
   <div class="write">
-    <quill-editor content-type="html" toolbar="#toolbar" theme="" @ready="(quill) => onReady(quill)" />
+    <quill-editor v-model:content="note" content-type="delta" toolbar="#toolbar" theme="" @ready="(quill) => onReady(quill)" />
 
     <div id="toolbar">
       <button class="ql-header" :value="1">T</button>
@@ -61,6 +63,10 @@ const editorSave = () => {
   padding: 0;
   margin: 0;
   font-weight: bold;
+}
+
+#toolbar button.ql-active {
+  background-color: var(--primary);
 }
 
 #toolbar .save {
