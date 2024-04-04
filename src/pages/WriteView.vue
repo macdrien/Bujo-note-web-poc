@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { type Ref, ref } from 'vue';
 import { type Quill, type Delta, QuillEditor } from '@vueup/vue-quill';
+import { router } from '../router';
 
 const note: Ref<Delta | undefined> = ref();
 const quill: Ref<Quill> = ref();
@@ -11,8 +12,12 @@ const onReady = (editor: Quill) => {
 }
 
 const editorSave = () => {
-  // Not yet implemented
-  console.log('Save not yet implemented');
+  router.push({
+    path: '/save',
+    query: {
+      note: encodeURIComponent(JSON.stringify(note.value?.ops))
+    }
+  });
 }
 </script>
 
