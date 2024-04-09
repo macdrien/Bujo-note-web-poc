@@ -1,8 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const identifier = ref<String>('');
 const password = ref<String>('');
+
+const formValid = computed(() => identifier.value.length && password.value.length);
+
+const save = () => {
+  if (formValid) {
+    localStorage.setItem('token', [identifier.value, password.value].join(':'));
+    router.push({ name: 'home' });
+  }
+};
 </script>
 
 <template>
@@ -17,7 +29,7 @@ const password = ref<String>('');
         <p>Mot de passe :</p>
         <input v-model="password" type="text" required />
       </div>
-      <button class="submit">Se connecter</button>
+      <button class="submit" @click="save" :disabled="!formValid">Se connecter</button>
     </div>
   </div>
 </template>
