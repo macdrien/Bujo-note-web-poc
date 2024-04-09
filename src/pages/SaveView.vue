@@ -15,11 +15,13 @@ const newNoteTitle = ref<String>('');
 <template>
   <div class="saveView">
     <h1>Enregistrer</h1>
-    <div class="newNote">
-      <h2>Nouvelle note :</h2>
-      <input v-model="newNoteTitle" />
+    <div class="form">
+      <div class="formField">
+        <p>Nouvelle note :</p>
+        <input v-model="newNoteTitle" />
+      </div>
+      <button class="submit">Enregistrer</button>
     </div>
-    <button>Enregistrer</button>
   </div>
 </template>
 
@@ -33,14 +35,5 @@ const newNoteTitle = ref<String>('');
 
 h1 {
   margin-bottom: 1em;
-}
-
-.newNote {
-  display: flex;
-  gap: 10px;
-}
-
-button {
-  margin-top: 1em;
 }
 </style>
