@@ -4,15 +4,24 @@ import ListView from './pages/ListView.vue';
 import SaveView from './pages/SaveView.vue';
 import LoginView from './pages/LoginView.vue';
 import { Delta } from '@vueup/vue-quill';
+import HomeView from './pages/HomeView.vue';
 
 const routes = [
-  { path: '/notes', component: ListView },
-  { path: '/write', component: WriteView },
-  { path: '/save', component: SaveView, props: (route: any) => ({ note: new Delta(JSON.parse(decodeURIComponent(route.query.note))) }) },
-  { path: '/', component: LoginView },
+  { name: 'notes', path: '/notes', component: ListView },
+  { name: 'write', path: '/write', component: WriteView },
+  { name: 'save', path: '/save', component: SaveView, props: (route: any) => ({ note: new Delta(JSON.parse(decodeURIComponent(route.query.note))) }) },
+  { name: 'login', path: '/login', component: LoginView },
+  { name: 'home', path: '/', component: HomeView },
 ];
 
-export const router = createRouter({
+const router = createRouter({
   history: createWebHashHistory(),
   routes,
 });
+router.beforeResolve(async (to) => {
+  if (!localStorage.getItem("token") && to.name !== 'login') {
+    return { name: "login" };
+  }
+});
+
+export { router };
