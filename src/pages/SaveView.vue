@@ -1,23 +1,46 @@
 <script setup lang="ts">
-import { Delta, QuillEditor } from '@vueup/vue-quill';
+import { Delta } from '@vueup/vue-quill';
 import { ref } from 'vue';
 
-const props = defineProps({
+defineProps({
   note: {
     type: Delta,
     required: true,
   },
 });
 
-const noteToSave = ref<Delta>(props.note);
+const newNoteTitle = ref<String>('');
 </script>
 
 <template>
-  <quill-editor v-model:content="noteToSave" content-type="delta" theme="" :enable="false" :read-only="true" :toolbar="undefined" />
+  <div class="saveView">
+    <h1>Enregistrer</h1>
+    <div class="newNote">
+      <h2>Nouvelle note :</h2>
+      <input v-model="newNoteTitle" />
+    </div>
+    <button>Enregistrer</button>
+  </div>
 </template>
 
 <style scoped>
-:deep(.ql-clipboard) {
-  display: none;
+.saveView {
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  position: relative;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+.newNote {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  margin-top: 1em;
 }
 </style>
