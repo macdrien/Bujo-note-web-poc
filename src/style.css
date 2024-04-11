@@ -71,9 +71,18 @@ button:disabled {
   box-shadow: none;
 }
 
+button:disabled:hover {
+  translate: none;
+}
+
 button:hover {
   box-shadow: none;
   translate: 1px 1px;
+}
+
+button.secondary {
+  background-color: var(--primary);
+  color: var(--background);
 }
 
 .form {
@@ -115,6 +124,14 @@ input:focus, input:active, input:hover {
   width: 100%;
   margin: 0;
   text-align: center;
+}
+
+.view {
+  height: 100vh;
+  width: 100vw;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .ql-container h1 {

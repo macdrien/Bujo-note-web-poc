@@ -13,7 +13,7 @@ const newNoteTitle = ref<String>('');
 </script>
 
 <template>
-  <div class="saveView">
+  <div class="view">
     <h1>Enregistrer</h1>
     <div class="form">
       <div class="formField">
@@ -24,16 +24,3 @@ const newNoteTitle = ref<String>('');
     </div>
   </div>
 </template>
-
-<style scoped>
-.saveView {
-  height: 100vh;
-  width: 100vw;
-  padding: 10px;
-  position: relative;
-}
-
-h1 {
-  margin-bottom: 1em;
-}
-</style>
