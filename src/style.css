@@ -10,6 +10,7 @@
   --text: #212121;
   --disabled: lightgrey;
   --disabled-font: grey;
+  --header-height: 2em;
 }
 
 * {
@@ -127,9 +128,8 @@ input:focus, input:active, input:hover {
 }
 
 .view {
-  height: 100vh;
-  width: 100vw;
-  padding: 5px;
+  height: calc(100vh - var(--header-height));
+  width: 100%;
   display: flex;
   flex-direction: column;
 }

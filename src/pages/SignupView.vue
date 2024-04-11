@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { login } from '../router';
 
 const router = useRouter();
 const formFields = ref({
@@ -18,8 +19,7 @@ const formValid = computed(() => {
 const signup = () => {
   if (formValid) {
     const { pseudo, password } = formFields.value;
-    localStorage.setItem('token', [pseudo, password].join(':'));
-    router.push({ name: 'home' });
+    login(pseudo, password);
   };
 }
 </script>

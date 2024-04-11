@@ -5,4 +5,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   base: "/Bujo-note/",
   plugins: [vue()],
+  optimizeDeps: {
+    exclude: ["oh-vue-icons/icons"]
+  }
 })

@@ -15,14 +15,6 @@ const router = useRouter();
 </template>
 
 <style scoped>
-.view {
-  padding: 10px;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-}
-
 .options {
   height: 100%;
   display: flex;

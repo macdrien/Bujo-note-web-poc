@@ -6,6 +6,7 @@ import LoginView from './pages/LoginView.vue';
 import { Delta } from '@vueup/vue-quill';
 import HomeView from './pages/HomeView.vue';
 import SignupView from './pages/SignupView.vue';
+import { computed } from 'vue';
 
 const routes = [
   { name: 'notes', path: '/notes', component: ListView },
@@ -28,4 +29,16 @@ router.beforeResolve(async (to) => {
   }
 });
 
-export { router };
+const logged = computed(() => localStorage.getItem('token') !== null);
+
+const login = (identifier: string, password: string) => {
+  localStorage.setItem('token', [identifier, password].join(':'));
+  router.push({ name: 'home' });
+};
+
+const logout = () => {
+  localStorage.removeItem('token');
+  router.push({ name: 'login' });
+};
+
+export { router, logged, login, logout };
