@@ -5,7 +5,7 @@ const router = useRouter();
 </script>
 
 <template>
-  <div class="homeView">
+  <div class="view">
     <h1>Welcome</h1>
     <div class="options">
       <button @click="() => router.push({ name: 'write' })">Noter</button>
@@ -15,7 +15,7 @@ const router = useRouter();
 </template>
 
 <style scoped>
-.homeView {
+.view {
   padding: 10px;
   height: 100vh;
   width: 100vw;

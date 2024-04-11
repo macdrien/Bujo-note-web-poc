@@ -18,7 +18,7 @@ const save = () => {
 </script>
 
 <template>
-  <div class="loginView">
+  <div class="view">
     <h1>Se connecter</h1>
     <div class="form">
       <div class="formField">
@@ -27,19 +27,18 @@ const save = () => {
       </div>
       <div class="formField">
         <p>Mot de passe :</p>
-        <input v-model="password" type="text" required />
+        <input v-model="password" type="password" required />
       </div>
       <button class="submit" @click="save" :disabled="!formValid">Se connecter</button>
+      <button class="secondary" @click="() => router.push({ name: 'signup'})">S'inscrire</button>
     </div>
   </div>
 </template>
 
 <style scoped>
-.loginView {
-  height: 100vh;
-  width: 100vw;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
+.noAccount {
+  color: var(--disabled-font);
+  margin-top: 1em;
+  font-size: 0.9em;
 }
 </style>
