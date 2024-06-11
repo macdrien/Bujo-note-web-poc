@@ -1,9 +1,9 @@
 {
-  "name": "bujo-note",
+  "name": "bujo-note-web-poc",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "homepage": "https://macdrien.github.io/Bujo-note",
+  "homepage": "https://macdrien.github.io/Bujo-note-web-poc",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
