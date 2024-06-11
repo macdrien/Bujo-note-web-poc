@@ -40,7 +40,6 @@ const editorSave = () => {
 <style scoped>
 .write {
   width: calc(100vw - 4px);
-  height: calc(100vh - 4px);
   padding: 2px;
   display: flex;
   flex-direction: column;
